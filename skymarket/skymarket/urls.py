@@ -29,9 +29,11 @@ urlpatterns = [
     path("", include(user_router.urls)),
     path("api/admin/", admin.site.urls),
     path("api/redoc-tasks/", include("redoc.urls")),
+    path('api/ads/', include('ads.urls', namespace='ads')),
 
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
