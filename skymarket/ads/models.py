@@ -20,8 +20,8 @@ class Ad(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'объявление'
-        verbose_name_plural = 'объявления'
+        verbose_name = 'Объявление'
+        verbose_name_plural = 'Объявления'
 
 
 class Comment(models.Model):
@@ -35,5 +35,5 @@ class Comment(models.Model):
         return self.author
 
     class Meta:
-        verbose_name = 'комментарий'
-        verbose_name_plural = 'коммантарии'
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Коммантарии'

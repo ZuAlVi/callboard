@@ -6,7 +6,7 @@ from django.core.management import call_command
 
 class Command(BaseCommand):
     help = "Loads fixtures from fixtures dir"
-    fixtures_dir = "fixtures"
+    fixtures_dir = "skymarket/fixtures"
     loaddata_command = "loaddata"
     filenames = [
         "users",
@@ -16,6 +16,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for fixture_filename in self.filenames:
+            # print(os.path.join(self.fixtures_dir, f"{fixture_filename}.json"))
             call_command(
                 self.loaddata_command, os.path.join(self.fixtures_dir, f"{fixture_filename}.json")
             )

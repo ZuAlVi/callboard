@@ -42,8 +42,8 @@ class CommentDefaultSerializer(serializers.ModelSerializer):
 
         if not 'text' in validated_data:
             raise ValidationError('Вы забыли написать комментарий')
-        com = Comment.objects.create(**validated_data)
-        com.author = self.context['request'].user
-        com.ad = obj_com
-        com.save()
-        return com
+        comm = Comment.objects.create(**validated_data)
+        comm.author = self.context['request'].user
+        comm.ad = obj_com
+        comm.save()
+        return comm

@@ -22,6 +22,7 @@ class MyAdListAPIView(generics.ListAPIView):
     """Класс возвращает список объявлений текущего пользователя"""
 
     serializer_class = AdDefaultSerializer
+    # permission_classes = [AllowAny]
     permission_classes = [IsAuthenticated]
     pagination_class = DefaultPagination
 
@@ -36,7 +37,8 @@ class AnotherAdRetrieveAPIView(generics.RetrieveUpdateAPIView, generics.DestroyA
     При DEL-запросе удаляет объявление по id
     """
 
-    renderer_classes = AdSerializer
+    serializer_class = AdSerializer
+    # permission_classes = [AllowAny]
     permission_classes = [IsAuthenticated]
     queryset = Ad.objects.all()
     lookup_field = 'id'
@@ -62,6 +64,7 @@ class CommentListCreateAPIView(generics.ListCreateAPIView):
     При POST-запросе создает новый коментарий
     """
     serializer_class = CommentDefaultSerializer
+    # permission_classes = [AllowAny]
     permission_classes = [IsAuthenticated]
     pagination_class = DefaultPagination
 
@@ -77,7 +80,7 @@ class AnotherCommentRetrieveAPIView(generics.RetrieveUpdateAPIView, generics.Des
     """
     serializer_class = CommentDefaultSerializer
     queryset = Comment.objects.all()
-    pagination_class = [IsAuthenticated]
+    pagination_class = IsAuthenticated
 
     def get_object(self):
         ad_pk = self.kwargs.get('ad_pk')
