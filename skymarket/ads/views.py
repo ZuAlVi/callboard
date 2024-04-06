@@ -13,7 +13,7 @@ class AdListCreateAPIView(generics.ListCreateAPIView):
     """
 
     serializer_class = AdDefaultSerializer
-    queryset = Ad.objects.all()
+    queryset = Ad.objects.order_by('created_at')
     permission_classes = [IsAuthenticated]
     pagination_class = DefaultPagination
 

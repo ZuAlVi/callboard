@@ -1,8 +1,8 @@
 # ADS-ONLINE 🛒📣
 
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Python Version](https://img.shields.io/badge/Python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
-[![Django Version](https://img.shields.io/badge/Django-4.1-092E20.svg)](https://www.djangoproject.com/)
+[![Python Version](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![Django Version](https://img.shields.io/badge/Django-3.2-092E20.svg)](https://www.djangoproject.com/)
+[![DRF Version](https://img.shields.io/badge/DRF-3.13-092E20.svg)](https://www.djangoproject.com/)
 
 ADS-ONLINE - это полнофункциональный веб-сайт онлайн-магазина, включающий в себя frontend и backend части.
 
@@ -34,10 +34,10 @@ pip install -r requirements.txt
 4.Провести миграции:
 
 ```bash
-python3 manage.py makemigrations
-python3 manage.py migrate
+python3 skymarket/manage.py makemigrations
+python3 skymarket/manage.py migrate
 ```
 5. Запустить локальный сервер:
 ```bash
-python3 manage.py runserver
+python3 skymarket/manage.py runserver
 ```

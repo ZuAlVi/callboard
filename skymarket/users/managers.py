@@ -8,7 +8,7 @@ from django.contrib.auth.models import (
 class UserManager(BaseUserManager):
     """ Класс создания пользователя"""
 
-    def create_user(self, email, first_name, password, last_name=None, phone=None, image=None):
+    def create_user(self, email, first_name, password, role='user', last_name=None, phone=None, image=None):
         """Функция создания пользователя — в нее мы передаем обязательные поля"""
         if not email:
             raise ValueError('Users must have an email address')
@@ -17,7 +17,7 @@ class UserManager(BaseUserManager):
             first_name=first_name,
             last_name=last_name,
             phone=phone,
-            role='user',
+            role=role,
             image=image
         )
         user.is_active = True
@@ -26,7 +26,7 @@ class UserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, email, first_name, password, last_name=None, phone=None, image=None):
+    def create_superuser(self, email, first_name, password, role='admin',last_name=None, phone=None, image=None):
         """
         функция для создания суперпользователя — с ее помощью мы создаем админинстратора
         это можно сделать с помощью команды createsuperuser
@@ -38,7 +38,7 @@ class UserManager(BaseUserManager):
             last_name=last_name,
             phone=phone,
             password=password,
-            role='admin',
+            role=role,
             image=image
         )
 
