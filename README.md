@@ -29,7 +29,7 @@ git clone git@github.com:ZuAlVi/callboard.git
 pip install -r requirements.txt
 ```
 
-3. Создать файл .env в корне проекта и внести необходимые данные, взяв за пример файл .env.example.
+3. Создать файл `.env` в корне проекта и внести необходимые данные, взяв за пример файл `.env.example`.
 
 4.Провести миграции:
 
