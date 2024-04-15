@@ -38,7 +38,6 @@ class AnotherAdRetrieveAPIView(generics.RetrieveUpdateAPIView, generics.DestroyA
     """
 
     serializer_class = AdSerializer
-    # permission_classes = [AllowAny]
     permission_classes = [IsAuthenticated]
     queryset = Ad.objects.all()
     lookup_field = 'id'
@@ -64,7 +63,6 @@ class CommentListCreateAPIView(generics.ListCreateAPIView):
     При POST-запросе создает новый коментарий
     """
     serializer_class = CommentDefaultSerializer
-    # permission_classes = [AllowAny]
     permission_classes = [IsAuthenticated]
     pagination_class = DefaultPagination
 
